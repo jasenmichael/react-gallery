@@ -1,24 +1,21 @@
 import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import { useState } from 'react';
+// componets
+import Header from './componets/Header';
+import ImageGrid from './componets/ImageGrid';
+import { ImageProvider } from './context/imageContext';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ImageProvider>
+      <div className="h-auto w-screen">
+        <Header  />
+        <ImageGrid />
+     </div>
+    </ImageProvider>
   );
 }
 
